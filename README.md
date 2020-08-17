@@ -17,14 +17,28 @@ We will be using **tensorflow for our position estimation** using openpose for t
 # Installation Steps:
  ### 1. Git Clone:
  Clone this repository into your local machine.<br>
- ```git clone https://github.com/mohit9949/Pose-Estimation-Similarity-For-Dance.git```
+ ```git clone https://github.com/mohit9949/Pose-Estimation-Similarity-With-TensorFlow.git```
  ### 2. Installing the requirements:
  Install all the requirements provided in the requirements.txt<br>
- ```cd Pose-Estimation-Similarity-For-Dance```<br>
- ```pip install -r requirements.txt```
+ ```cd Pose-Estimation-Similarity-With-TensorFlow```<br>
+ ```pip install -r requirements.txt```<br>
+ If any problem with downloading pycocotools follow this link at Step 4: https://github.com/markjay4k/Mask-RCNN-series/blob/master/Mask_RCNN%20Install%20Instructions.ipynb
+ 
+ 
  ### 3. Install SWIG:
  ```conda install swig```<br>or<br> Download Link: http://www.swig.org/survey.html
- ### 4. Build C++ library for post-processing.
- 
+ ### 4. Build C++ library for post-processing:
+ ```cd tf_pose/pafprocess```
+ <br>
+ ```swig -python -c++ pafprocess.i && python setup.py build_ext --inplace```
+ ### 5. Installing tf_slim:
+ ```cd ../../``` <br> 
+ ```pip install git+https://github.com/adrianc-a/tf-slim.git@remove_contrib```<br>or<br>
+ ```git clone https://github.com/google-research/tf-slim.git```<br>
+ and copy the folder ```tf_slim``` in it to our repository ```Pose-Estimation-Similarity-With-TensorFlow```
+ ### 6. Download Tensorflow Graph File(pb file).
+ ```cd models/graph/cmu```<br>
+ ```bash download.sh```<br>
+ ```cd ../../..```
  
  
