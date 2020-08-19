@@ -52,7 +52,7 @@ We will be using **tensorflow for our position estimation** using openpose for t
 **Flaws:**
 - This approach fails when the trainer is far or the user is near to the camera or vise-versa. This happens because there is a **scale variation** between the keypoints of the image.<br>
 **Solution:**
-- We can eleminate this problem by **croping out the image of a peron** using a CNN architecture like Yolo or anything that could detect the bounding boxes of a person.
+- We can eleminate this problem by **croping out the image of a person** using a CNN architecture like Yolo or anything that could detect the bounding boxes of a person.
 - This image then can be fed to the openpose model to estimate keypoints for both the sources.<br>
 **Scope of improvement:**
 - The accuracy of the model for keypoint prediction can be increased by taking a much powerful pretrained model architecture than mobilenet.
